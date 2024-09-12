@@ -1,0 +1,34 @@
+name: Steep
+
+on:
+  push:
+  pull_request:
+    types: [opened, reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        ruby-version:
+          - "3.2"
+        rails-version:
+          - "7.1"
+    env:
+      BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/rails_${{ matrix.rails-version }}.gemfile
+
+    name: Steep - Ruby ${{ matrix.ruby-version }} on Rails ${{ matrix.rails-version }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby ${{ matrix.ruby-version }} on Rails ${{ matrix.rails-version }}
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby-version }}
+          bundler-cache: true
+      - name: Verify Ruby Types (Static)
+        run: |
+          bundle exec rake steep
+      - name: Verify Ruby Types (Runtime)
+        run: |
+          bundle exec rake rbs:spec

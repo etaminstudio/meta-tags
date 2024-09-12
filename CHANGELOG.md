@@ -1,10 +1,54 @@
 # Changelog
 
+## 2.22.0 (July 15, 2024)
+
+Changes:
+
+- Added support for Ruby on Rails 7.2 ([303](https://github.com/kpumuk/meta-tags/pull/303))
+
+## 2.21.0 (April 11, 2024)
+
+Bugfixes:
+
+- Removed a duplicated `title_tag_attributes` configuration from the initializer ([287](https://github.com/kpumuk/meta-tags/pull/287)).
+
+Changes:
+
+- Ruby older than 3.0 is no longer supported.
+- Added `truncate_on_natural_separator` configuration option to the initializer ([287](https://github.com/kpumuk/meta-tags/pull/287)).
+
+## 2.20.0 (December 26, 2023)
+
+Features:
+
+- Introduced `truncate_on_natural_separator` configuration option to change or disable truncation on natural separator ([283](https://github.com/kpumuk/meta-tags/pull/283)).
+- Introduced `title_tag_attributes` configuration option to add HTML attributes to the title tag ([284](https://github.com/kpumuk/meta-tags/pull/284)).
+
+Changes:
+
+- Switched builds from CircleCI to Github Actions ([273](https://github.com/kpumuk/meta-tags/pull/273))
+- Ruby on Rails < 6.0 is no longer supported.
+
+## 2.19.0 (October 5, 2023) [☰](https://github.com/kpumuk/meta-tags/compare/v2.18.0...v2.19.0)
+
+Changes:
+
+- Switched code style from custom rules to Standard ([246](https://github.com/kpumuk/meta-tags/pull/246)).
+- Switched from testing Rails using environment variables to Appraisal gem ([251](https://github.com/kpumuk/meta-tags/pull/251)).
+- Ruby 2.7 is minimum supported version ([257](https://github.com/kpumuk/meta-tags/pull/257))
+- Added support for Rails 7.1 ([267](https://github.com/kpumuk/meta-tags/pull/267))
+
+## 2.18.0 (September 15, 2022) [☰](https://github.com/kpumuk/meta-tags/compare/v2.17.0...v2.18.0)
+
+Changes:
+
+- Fallback to site name when title is empty in mirrored tags ([243](https://github.com/kpumuk/meta-tags/pull/243))
+
 ## 2.17.0 (July 5, 2022) [☰](https://github.com/kpumuk/meta-tags/compare/v2.16.0...v2.17.0)
 
 Changes:
 
-- Separate RBS files to _internal directory to avoid exposing RBS ([237](https://github.com/kpumuk/meta-tags/pull/237))
+- Separate RBS files to \_internal directory to avoid exposing RBS ([237](https://github.com/kpumuk/meta-tags/pull/237))
 - Added Ruby 3.1 to supported versions, Ruby 2.6 is minimum supported version ([235](https://github.com/kpumuk/meta-tags/pull/235/))
 
 ## 2.16.0 (September 24, 2021) [☰](https://github.com/kpumuk/meta-tags/compare/v2.15.0...v2.16.0)
@@ -169,7 +213,7 @@ Features:
 
 Changes:
 
-- Rails < 3.2 is not longer supported
+- Ruby on Rails < 3.2 is no longer supported
 
 Features:
 
@@ -188,7 +232,7 @@ Bugfixes:
 
 Changes:
 
-- Ruby < 2.0 is not longer supported
+- Ruby < 2.0 is no longer supported
 
 Features:
 
