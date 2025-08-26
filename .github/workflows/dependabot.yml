@@ -14,11 +14,11 @@ jobs:
       fail-fast: true
       matrix:
         ruby-version:
-          - "3.2"
+          - "3.3"
 
     name: Appraisal - Ruby ${{ matrix.ruby-version }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           ref: ${{ github.head_ref }}
       - name: Set up Ruby ${{ matrix.ruby-version }}

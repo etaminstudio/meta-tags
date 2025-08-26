@@ -12,15 +12,15 @@ jobs:
       fail-fast: true
       matrix:
         ruby-version:
-          - "3.2"
+          - "3.3"
         rails-version:
-          - "7.1"
+          - "8.0"
     env:
       BUNDLE_GEMFILE: ${{ github.workspace }}/gemfiles/rails_${{ matrix.rails-version }}.gemfile
 
     name: Steep - Ruby ${{ matrix.ruby-version }} on Rails ${{ matrix.rails-version }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Set up Ruby ${{ matrix.ruby-version }} on Rails ${{ matrix.rails-version }}
         uses: ruby/setup-ruby@v1
         with:
